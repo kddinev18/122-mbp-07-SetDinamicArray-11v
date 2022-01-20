@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Set.cpp" />
     <ClCompile Include="Sets.cpp" />
   </ItemGroup>
   <ItemGroup>

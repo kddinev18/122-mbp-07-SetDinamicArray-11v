@@ -18,6 +18,9 @@
     <ClCompile Include="Sets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Set.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Set.h">

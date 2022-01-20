@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Sets",
+    "\\Sets\\Sets"
   ],
+  "SelectedNode": "\\Sets\\Sets\\Set.h",
   "PreviewInSolutionExplorer": false
 }
