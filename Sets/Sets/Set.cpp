@@ -10,17 +10,27 @@ Set Set::complementWith(Set& Y)
 {
 	Set newSet;
 	int count = 0;
-	for (int i = 0; i < size; i++)
-	{
-		for (int j = 0; j < size; j++)
-		{
-			if (!(elements[i] == Y.elements[j]))
-			{
-				newSet.elements[count++] = elements[i];
-				newSet.elements[count++] = Y.elements[i];
-			}
+	int i = 0, j = 0;
+	while (i < size && j < Y.size) {
+		if (elements[i] < Y.elements[j]) {
+			newSet.elements[count++] = elements[i];
+			newSet.size++;
+			i++;
+		}
+		else if (elements[i] > Y.elements[j]) {
+			j++;
+		}
+		else if (elements[i] == Y.elements[j]) {
+			i++;
+			j++;
 		}
 	}
+	while (i < size)
+	{
+		newSet.elements[count++] = elements[i];
+		newSet.size++;
+	}
+
 	return newSet;
 }
 
@@ -69,10 +79,12 @@ Set Set::unionWith(Set& y)
 	for (int i = 0; i < this->size; i++)
 	{
 		newSet.elements[count++] = this->elements[i];
+		newSet.size++;
 	}
 	for (int i = 0; i < y.size; i++)
 	{
 		newSet.elements[count++] = y.elements[i];
+		newSet.size++;
 	}
 	return newSet;
 }
@@ -86,6 +98,7 @@ Set Set::intersectWith(Set& y)
 		if (y.contains(elements[i]))
 		{
 			newSet.elements[count++] = elements[i];
+			newSet.size++;
 		}
 	}
 	return newSet;
